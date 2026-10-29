@@ -1,0 +1,17 @@
+[
+    {
+        "usernameemailid": "invaliduser@example.com",
+        "passwordemailid": "invalidpassword"
+    },
+
+     {
+        "usernameemailid": "invaliduser@exampleopen.com",
+        "passwordemailid": "   "
+    },
+     {
+        "usernameemailid": "   ",
+        "passwordemailid": "invalidpasswordopen"
+    }
+
+
+]
