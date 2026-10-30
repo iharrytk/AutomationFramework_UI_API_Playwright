@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Users List</title>
+</head>
+<body>
+<h1>Users</h1>
+<ul id="users"></ul>
+
+<script>
+  async function loadUsers() {
+    const res = await fetch('http://localhost:3000/users');
+    const users = await res.json();
+    const ul = document.getElementById('users');
+    ul.innerHTML = '';
+    users.forEach(user => {
+      const li = document.createElement('li');
+      li.textContent = `${user.name} (${user.job})`;
+      ul.appendChild(li);
+    });
+  }
+  loadUsers();
+</script>
+</body>
+</html>
