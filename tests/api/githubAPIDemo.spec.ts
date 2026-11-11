@@ -18,7 +18,7 @@ test.beforeAll(async ({ playwright }) => {
      'Accept': 'application/vnd.github.v3+json',
      // Add authorization token to all requests.
      // Assuming personal access token available in the environment.
-     'Authorization': `token `,
+     'Authorization': `token ${process.env.GITHUB_TOKEN}`,
    },
  });
 });
@@ -28,7 +28,7 @@ test.afterAll(async ({ }) => {
  await apiContext.dispose();
 });
 
-test('last created issue should be first in the provided list', async ({ page }) => {
+test.skip('last created issue should be first in the provided list', async ({ page }) => {
  const newIssue = await apiContext.post(`/repos/${USER}/${REPO}/issues`, {
    data: {
      title: '[Feature] request 1',

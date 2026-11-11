@@ -35,7 +35,7 @@ test('intercept with mocking',async ({page})=>{
 
     await page.goto('https://naveenautomationlabs.com/opencart/index.php?route=product/product&product_id=43');
 
-    await page.pause();
+    //await page.pause();
 
 
 

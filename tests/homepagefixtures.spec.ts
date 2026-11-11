@@ -11,7 +11,7 @@ test.beforeEach(async({loginPage})=>{
  //**********************************************/ 
 
 
-test('To Verify the homePage sidebar links counts',async ({homePage})=>{
+test('To Verify the homePage sidebar links counts',{tag:['@sanity','@smoke','@regression']},async ({homePage})=>{
    let sideBarCount= await homePage.getHomePageSideBarLinksCount();
    expect(sideBarCount).toBe(13);
 
@@ -19,7 +19,7 @@ test('To Verify the homePage sidebar links counts',async ({homePage})=>{
 
  //**********************************************/ 
 
-test('To Verify the homePage footer links counts',async ({homePage})=>{
+test('To Verify the homePage footer links counts',{tag:['@sanity','@smoke','@regression']},async ({homePage})=>{
 
     let footerLinksCount= await homePage.getHomePageFooterLinksCount();
     expect(footerLinksCount).toBe(15);
@@ -28,10 +28,10 @@ test('To Verify the homePage footer links counts',async ({homePage})=>{
 });
 
 
-test('To verify HomaPage headers text',async({homePage})=>{ 
+test('To verify HomaPage headers text',{tag:['@sanity','@smoke','@regression']},async({homePage})=>{ 
 
 
     let homePageHeadersText=await homePage.getHomePageHeadersText();
     expect.soft(homePageHeadersText).toHaveLength(4);
     expect.soft(homePageHeadersText).toEqual(['My Account','My Orders','My Affiliate Account','Newsletter']);
-});
+})
