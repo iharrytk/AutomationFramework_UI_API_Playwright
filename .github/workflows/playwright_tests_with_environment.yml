@@ -1,8 +1,8 @@
 name: Playwright Tests with Env
 
 on:
-  schedule:
-    - cron: '30 21 * * 1-4'  # Mon-Fri 8PM IST
+#   schedule:
+#     - cron: '30 21 * * 1-4'  # Mon-Fri 8PM IST
   # push:
   #   branches: [main]
   # pull_request:
@@ -47,11 +47,11 @@ jobs:
 
       - name: Install Playwright browsers
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install 
 
       - name: Install Playwright OS deps only (if cached)
         if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps chromium
+        run: npx playwright install
 
       # reportingLabs run history: powers the Trend chart, new vs known
       # failures, flaky dots and "got slower". One history per environment.
