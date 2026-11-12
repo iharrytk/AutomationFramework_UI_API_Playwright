@@ -55,7 +55,7 @@ jobs:
           PASSWORDEMAIL: ${{ secrets.PASSWORDEMAIL}}
           API_BASEURL: ${{ secrets.API_BASEURL}}
           API_TOKEN: ${{ secrets.API_TOKEN}}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN}}
           
 
       - name: Upload HTML Report

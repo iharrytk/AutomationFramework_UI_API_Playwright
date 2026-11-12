@@ -18,7 +18,7 @@ test.beforeAll(async ({ playwright }) => {
      'Accept': 'application/vnd.github.v3+json',
      // Add authorization token to all requests.
      // Assuming personal access token available in the environment.
-     'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+     'Authorization': `token ${process.env.GIT_TOKEN}`,
    },
  });
 });
