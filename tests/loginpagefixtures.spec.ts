@@ -10,7 +10,7 @@ test.beforeEach(async ({loginPage})=>{
 
 
 
-test('Verify login page title', async ({loginPage})=>{  
+test('Verify login page title',{tag:['@sanity','@smoke','@regression']}, async ({loginPage})=>{  
     
     let title=await loginPage.getLoginPageTitle();
     console.log(`The login page title is : ${title}`);
@@ -20,7 +20,7 @@ test('Verify login page title', async ({loginPage})=>{
 
  //**********************************************/ 
 
-    test('Verify Logo is displayed on the login page',async({loginPage})=>{
+    test('Verify Logo is displayed on the login page',{tag:['@sanity','@smoke','@regression']},async({loginPage})=>{
 
         
         let isLogoDisplayed=await loginPage.isLogoDisplayed();
@@ -30,7 +30,7 @@ test('Verify login page title', async ({loginPage})=>{
 
 
  //**********************************************/ 
-test('Verify login functionality',async ({loginPage,homePage})=>{
+test('Verify login functionality',{tag:['@sanity','@smoke','@regression']},async ({loginPage,homePage})=>{
     
     await loginPage.doLogin(process.env.USERNAMEEMAIL!,process.env.PASSWORDEMAIL!);
     let homePageActualTitle =await homePage.getHomePageTitle();
@@ -42,7 +42,7 @@ test('Verify login functionality',async ({loginPage,homePage})=>{
 
  //**********************************************/ 
 
-test('Verify forgot password link is displayed on the login page',async({loginPage})=>{
+test('Verify forgot password link is displayed on the login page',{tag:['@sanity','@smoke','@regression']},async({loginPage})=>{
 
    let isForgotPasswordLinkDisplayedActual=await loginPage.getForgotPasswordLinkExists();
    expect(isForgotPasswordLinkDisplayedActual).toBeTruthy();
