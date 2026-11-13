@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","987","Verify Logo is displayed on the login page","chromium","2026-11-13","passed","2026-11-13","","loginpagefixtures.spec.ts","",""
+"","1007","Verify forgot password link is displayed on the login page","chromium","2026-11-13","passed","2026-11-13","","loginpagefixtures.spec.ts","",""
+"","2817","To Verify the homePage sidebar links counts","chromium","2026-11-13","passed","2026-11-13","","homepagefixtures.spec.ts","",""
+"","2468","To Verify the homePage footer links counts","chromium","2026-11-13","passed","2026-11-13","","homepagefixtures.spec.ts","",""
+"","1161","Verify login page title","chromium","2026-11-13","passed","2026-11-13","","loginpagefixtures.spec.ts","",""
+"","2135","Verify login functionality","chromium","2026-11-13","passed","2026-11-13","","loginpagefixtures.spec.ts","",""
+"","1976","To verify HomaPage headers text","chromium","2026-11-13","passed","2026-11-13","","homepagefixtures.spec.ts","",""
