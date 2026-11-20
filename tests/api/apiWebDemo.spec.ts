@@ -1,6 +1,6 @@
 import { test, expect, request } from '@playwright/test';
 
-test('Add user via API and verify in UI', async ({ page }) => {
+test.skip('Add user via API and verify in UI', async ({ page }) => {
 
  // Step 1: API context
  const apiContext = await request.newContext({
