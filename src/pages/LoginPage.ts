@@ -88,4 +88,33 @@ async invalidLoginMessageExists(email:string,password:string):Promise<boolean>{
    return await this.invalidLoginWarningMessage.isVisible();
 }
 
+
+//*************************************** */
+
+async doLoginDebugging(email:string,password:string):Promise<void>{
+
+
+console.log(`The user credentials are : ${email} and ${password}`);
+await this.emailInput.fill(email);
+await this.passwordInput.fill(password);
+// ERROR 3: Incorrect locator
+await this.page.locator('#invalid-login-button').click();
+//await this.LoginButton.click();//correct button click
+// ERROR 4: Incorrect wait condition
+await this.page.waitForURL('**/invalid-dashboard');
+//await this.page.waitForURL('https://naveenautomationlabs.com/opencart/index.php?route=account/account');
+
+
+}
+
+//*************************************** */
+
+
+async goToLoginPageDebugging():Promise<void>{
+    // ERROR 1: Incorrect URL navigation
+    await this.page.goto('opencart/index.php?route=account/loginn');
+
+}
+//*************************************** */
+
 }

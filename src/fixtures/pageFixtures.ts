@@ -5,12 +5,14 @@ import { RegisterPage } from "../pages/RegisterPage";
 import {ResultsPage} from "../pages/ResultsPage";
 import { ProductInfoPage } from "../pages/ProductInfoPage";
 
+
 type pageFixtures={
     loginPage:LoginPage;
     homePage:HomePage
     registerPage:RegisterPage;
     resultsPage:ResultsPage;
     productInfoPage:ProductInfoPage
+  
 }
 
 
@@ -48,6 +50,57 @@ export let test = BaseTest.extend<pageFixtures>({
         let productInfoPage=new ProductInfoPage(page);
         await use(productInfoPage);
 
+
+    },
+
+
+    page: async ({ page }, use) => {
+
+        // Browser console logs
+        page.on('console', msg => {
+
+            console.log(
+                `[BROWSER ${msg.type()}] ${msg.text()}`
+            );
+
+        });
+
+        // JavaScript errors
+        page.on('pageerror', error => {
+
+            console.error(
+                `[PAGE ERROR] ${error.message}`
+            );
+
+        });
+
+        // Failed network requests
+        page.on('requestfailed', request => {
+
+            console.error(
+                `[REQUEST FAILED] ${request.url()}`
+            );
+
+            console.error(
+                request.failure()?.errorText
+            );
+
+        });
+
+        // HTTP errors
+        page.on('response', response => {
+
+            if (response.status() >= 400) {
+
+                console.error(
+                    `[HTTP ERROR ${response.status()}] ${response.url()}`
+                );
+
+            }
+
+        });
+
+        await use(page);
 
     }
 
